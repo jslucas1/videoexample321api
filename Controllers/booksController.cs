@@ -46,7 +46,8 @@ namespace api.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Book value)
         {
-            Console.WriteLine(value.ToString());
+            IUpdateBook updateObject = new SaveBook();
+            updateObject.UpdateBook(value);
         }
 
         // DELETE: api/ApiWithActions/5
